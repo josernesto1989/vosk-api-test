@@ -4,10 +4,7 @@
 # Example usage using Dutch (nl) recognition model: `python test_microphone.py -m nl`
 # For more help run: `python test_microphone.py -h`
 
-import argparse
 import json
-import queue
-import sys
 from vosk import Model, KaldiRecognizer
 import soundfile as sf
 import os
