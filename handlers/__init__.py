@@ -1,2 +1,2 @@
 from .voskhandler import VoskHandler
-from .voskhandler import VoskHandlerFactory
+from .voskhandlerfactory import VoskHandlerFactory

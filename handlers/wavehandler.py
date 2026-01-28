@@ -1,6 +1,7 @@
 from .voskhandler import VoskHandler
 import wave
 from vosk import KaldiRecognizer
+import json
 
 class WaveHandler(VoskHandler):
     def __init__(self, path_to_model: str, path_to_file: str):
@@ -14,16 +15,15 @@ class WaveHandler(VoskHandler):
 
         rec = KaldiRecognizer(self._model, wf.getframerate())
         result = ""
-
+        rec.SetWords(True)
+        rec.SetPartialWords(True)
         while True:
             data = wf.readframes(4000)
             if len(data) == 0:
                 break
             if rec.AcceptWaveform(data):
-                res = rec.Result()
-                result += res
+                pass
 
-        final_res = rec.FinalResult()
-        result += json.loads(final_res)['text']
-        return result
+        return (json.loads(rec.FinalResult())['text'])
+
     
