@@ -3,6 +3,7 @@ __pycache__/
 *.py[codz]
 *$py.class
 models/
+waves/
 #MacOS
 .DS_Store
 # C extensions

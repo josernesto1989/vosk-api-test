@@ -1,10 +1,12 @@
 from .voskhandler import VoskHandler
 from .wavehandler import WaveHandler
+from .mp4handler import MP4Handler
 import os
 
 class VoskHandlerFactory:
     _extension_to_handler = {
         '.wav': WaveHandler,
+        '.mp4': MP4Handler,
     }
     @classmethod
     def create_handler(cls, model_path, file_path):
